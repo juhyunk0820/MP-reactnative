@@ -43,8 +43,6 @@ const toastConfig = {
 
 function App() {
   const {theme} = useThemeStorage();
-  Alert.alert(Config.GOOGLE_API_KEY);
-  Alert.alert(Config.KAKAO_REST_API_KEY);
   return (
     <QueryClientProvider client={queryClient}>
       <StatusBar
