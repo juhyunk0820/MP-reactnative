@@ -65,10 +65,10 @@ function SettingHomeScreen({navigation}: SettingHomeScreenProps) {
           isVisible={darkModeOption.isVisible}
           hideOption={darkModeOption.hide}
         />
-        {/* <MapLegendOption
+        <MapLegendOption
           isVisible={mapLegendOption.isVisible}
           hideOption={mapLegendOption.hide}
-        /> */}
+        />
       </ScrollView>
     </SafeAreaView>
   );

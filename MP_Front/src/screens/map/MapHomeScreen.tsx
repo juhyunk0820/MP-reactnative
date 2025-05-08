@@ -152,7 +152,7 @@ function MapHomeScreen() {
         isVisible={markerModal.isVisible}
         hide={markerModal.hide}
       />
-      {/* {legend.isVisible && <MapLegend />} */}
+      {legend.isVisible && <MapLegend />}
     </>
   );
 }
