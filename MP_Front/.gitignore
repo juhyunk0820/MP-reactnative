@@ -74,4 +74,10 @@ yarn-error.log
 !.yarn/sdks
 !.yarn/versions
 
+# react-native-config codegen
+ios/tmp.xcconfig
+node_modules
+
 .env
+android/app/src/main/AndroidManifest.xml
+.gitignore
