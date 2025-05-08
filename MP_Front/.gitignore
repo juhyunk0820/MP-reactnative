@@ -79,6 +79,10 @@ ios/tmp.xcconfig
 node_modules
 
 .env
+# iOS
+ios/MP_Front/AppDelegate.swift
+
+# Android
 android/app/src/main/AndroidManifest.xml
-.gitignore
+
 ios/MP_Front/AppDelegate.swift
