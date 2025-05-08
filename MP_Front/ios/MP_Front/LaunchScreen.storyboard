@@ -21,17 +21,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="SplashIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dvp-Qm-1nD">
-                                <rect key="frame" x="145" y="227" width="84" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="SplashIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dvp-Qm-1nD">
+                                <rect key="frame" x="145.5" y="291.5" width="84" height="84"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dvp-Qm-1nD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Cz7-ut-rE2"/>
+                            <constraint firstItem="dvp-Qm-1nD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="D1j-in-itH"/>
+                            <constraint firstItem="dvp-Qm-1nD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DGL-5p-y0r"/>
+                            <constraint firstItem="dvp-Qm-1nD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="DLQ-yp-qA7"/>
+                            <constraint firstItem="dvp-Qm-1nD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="EqH-uh-nyZ"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="MN2-I3-ftu" secondAttribute="bottom" constant="20" id="OZV-Vh-mqD"/>
                             <constraint firstItem="MN2-I3-ftu" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="akx-eg-2ui"/>
                             <constraint firstItem="MN2-I3-ftu" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="i1E-0Y-4RG"/>
+                            <constraint firstItem="dvp-Qm-1nD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="pof-Hi-bBX"/>
                         </constraints>
                     </view>
                 </viewController>
