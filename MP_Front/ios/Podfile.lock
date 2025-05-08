@@ -5,6 +5,9 @@ PODS:
   - FBLazyVector (0.79.2)
   - fmt (11.0.2)
   - glog (0.3.5)
+  - GoogleMaps (9.4.0):
+    - GoogleMaps/Maps (= 9.4.0)
+  - GoogleMaps/Maps (9.4.0)
   - hermes-engine (0.79.2):
     - hermes-engine/Pre-built (= 0.79.2)
   - hermes-engine/Pre-built (0.79.2)
@@ -2202,6 +2205,7 @@ DEPENDENCIES:
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - fmt (from `../node_modules/react-native/third-party-podspecs/fmt.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - GoogleMaps (= 9.4.0)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCT-Folly/Fabric (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
@@ -2288,6 +2292,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - GoogleMaps
     - SocketRocket
     - TOCropViewController
 
@@ -2475,6 +2480,7 @@ SPEC CHECKSUMS:
   FBLazyVector: 84b955f7b4da8b895faf5946f73748267347c975
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
   glog: 5683914934d5b6e4240e497e0f4a3b42d1854183
+  GoogleMaps: 0608099d4870cac8754bdba9b6953db543432438
   hermes-engine: 314be5250afa5692b57b4dd1705959e1973a8ebe
   RCT-Folly: e78785aa9ba2ed998ea4151e314036f6c49e6d82
   RCTDeprecation: 83ffb90c23ee5cea353bd32008a7bca100908f8c
@@ -2552,13 +2558,13 @@ SPEC CHECKSUMS:
   RNCMaskedView: ae521efb1c6c2b183ae0f8479487db03c826184c
   RNGestureHandler: ebef699ea17e7c0006c1074e1e423ead60ce0121
   RNImageCropPicker: b0afedeefd8655254a15c34103718455fde6ce59
-  RNPermissions: 26b05e98dcc62251839cc966c9a96db97b0a3295
+  RNPermissions: 893795347518cbb97acf4487f128c13d281f39a8
   RNReanimated: 2313402fe27fecb7237619e9c6fcee3177f08a65
   RNScreens: 5621e3ad5a329fbd16de683344ac5af4192b40d3
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   TOCropViewController: 80b8985ad794298fb69d3341de183f33d1853654
   Yoga: c758bfb934100bb4bf9cbaccb52557cee35e8bdf
 
-PODFILE CHECKSUM: 227e5dd69b420b7050e496ae038f1f5ce63418b1
+PODFILE CHECKSUM: ce6b363ecd0829bbae288ddc8685aa8c306a78de
 
 COCOAPODS: 1.16.2
