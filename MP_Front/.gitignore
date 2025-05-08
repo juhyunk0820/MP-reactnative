@@ -81,3 +81,4 @@ node_modules
 .env
 android/app/src/main/AndroidManifest.xml
 .gitignore
+ios/MP_Front/AppDelegate.swift
