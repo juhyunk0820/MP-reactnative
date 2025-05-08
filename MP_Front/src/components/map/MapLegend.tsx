@@ -1,10 +1,11 @@
-import {colorHex, colors} from '@/constants';
-import useAuth from '@/hooks/queries/useAuth';
-import useThemeStorage from '@/hooks/useThemeStorage';
-import {Category, MarkerColor, ThemeMode} from '@/types';
-import React, {Fragment} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import React, {Fragment, memo} from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+
+import useAuth from '@/hooks/queries/useAuth';
+import useThemeStore from '@/store/useThemeStore';
+import {colorHex, colors} from '@/constants';
+import type {ThemeMode, Category, MarkerColor} from '@/types';
 
 const categoryList: MarkerColor[] = [
   'RED',
@@ -15,10 +16,10 @@ const categoryList: MarkerColor[] = [
 ];
 
 function MapLegend() {
-  const {theme} = useThemeStorage();
+  const {theme} = useThemeStore();
   const styles = styling(theme);
-  const {getProfileQuery} = useAuth();
   const insets = useSafeAreaInsets();
+  const {getProfileQuery} = useAuth();
   const {categories} = getProfileQuery.data || {};
 
   return (
@@ -29,7 +30,7 @@ function MapLegend() {
             return (
               <Fragment key={i}>
                 {categories?.[color] !== '' && (
-                  <View style={styles.column}>
+                  <View style={styles.colmn}>
                     <View
                       style={[
                         styles.legendColor,
@@ -48,19 +49,17 @@ function MapLegend() {
   );
 }
 
-export default MapLegend;
-
 const styling = (theme: ThemeMode) =>
   StyleSheet.create({
     container: {
       position: 'absolute',
       right: 15,
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      backgroundColor: 'rgba(0,0,0,0.5)',
       padding: 10,
       borderRadius: 10,
       gap: 3,
     },
-    column: {
+    colmn: {
       flexDirection: 'row',
       alignItems: 'center',
       gap: 5,
@@ -76,3 +75,5 @@ const styling = (theme: ThemeMode) =>
       fontSize: 13,
     },
   });
+
+export default memo(MapLegend);
