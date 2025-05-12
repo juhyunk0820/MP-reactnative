@@ -76,7 +76,7 @@ function EditCategoryScreen({navigation}: EditCategoryScreenProps) {
     navigation.setOptions({
       headerRight: () => EditCategoryHeaderRight(handleSubmit),
     });
-  }, []);
+  }, [handleSubmit]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -105,7 +105,7 @@ function EditCategoryScreen({navigation}: EditCategoryScreenProps) {
                     error={category.errors[color]}
                     touched={category.touched[color]}
                     placeholder={categoryPlaceholderList[i]}
-                    ref={el => (refArray.current[i] = el)}
+                    // ref={el => (refArray.current[i] = el)}
                     autoFocus={color === 'RED'}
                     maxLength={10}
                     returnKeyType="next"
