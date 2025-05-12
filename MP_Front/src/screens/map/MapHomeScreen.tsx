@@ -99,7 +99,7 @@ function MapHomeScreen() {
       <MapView
         ref={mapRef}
         style={styles.container}
-        provider={PROVIDER_GOOGLE}
+        // provider={PROVIDER_GOOGLE}
         showsUserLocation
         followsUserLocation
         showsMyLocationButton={false}
