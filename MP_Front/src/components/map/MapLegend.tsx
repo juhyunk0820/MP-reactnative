@@ -72,7 +72,7 @@ const styling = (theme: ThemeMode) =>
     legendText: {
       color: colors[theme].UNCHANGE_WHITE,
       fontWeight: '500',
-      fontSize: 13,
+      fontSize: 15,
     },
   });
 
