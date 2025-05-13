@@ -5,6 +5,8 @@ import {colors} from '@/constants';
 import FeedFavoriteList from '@/components/feed/FeedFavoriteList';
 import {ThemeMode} from '@/types';
 import useThemeStore from '@/store/useThemeStore';
+import RetryErrorBoundary from '@/components/common/RetryErrorBoundary';
+import Loader from '@/components/common/Loader';
 
 function FeedFavoriteScreen() {
   const {theme} = useThemeStore();
@@ -12,7 +14,11 @@ function FeedFavoriteScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <FeedFavoriteList />
+      <RetryErrorBoundary>
+        <Suspense fallback={<Loader />}>
+          <FeedFavoriteList />
+        </Suspense>
+      </RetryErrorBoundary>
     </SafeAreaView>
   );
 }
