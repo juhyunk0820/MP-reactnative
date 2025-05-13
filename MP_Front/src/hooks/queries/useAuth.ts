@@ -32,6 +32,7 @@ import {Category, Profile} from '@/types';
 function useSignup(mutationOptions?: UseMutationCustomOptions) {
   return useMutation({
     mutationFn: postSignup,
+    throwOnError: error => Number(error.response?.status) >= 500,
     ...mutationOptions,
   });
 }
@@ -42,6 +43,7 @@ function useLogin<T>(
 ) {
   return useMutation({
     mutationFn: loginAPI,
+    throwOnError: error => Number(error.response?.status) >= 500,
     onSuccess: ({accessToken, refreshToken}) => {
       setHeader('Authorization', `Bearer ${accessToken}`);
       setEncryptStorage(storageKeys.REFRESH_TOKEN, refreshToken);
