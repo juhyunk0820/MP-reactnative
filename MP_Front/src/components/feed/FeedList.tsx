@@ -3,6 +3,7 @@ import {FlatList, StyleSheet, Text, View} from 'react-native';
 import useGetInfinitePosts from '@/hooks/queries/useGetInfinitePosts';
 import FeedItem from './FeedItem';
 import useThemeStore from '@/store/useThemeStore';
+import {colors} from '@/constants';
 
 function FeedList() {
   const {theme} = useThemeStore();
@@ -35,7 +36,9 @@ function FeedList() {
       numColumns={2}
       ListEmptyComponent={
         <View>
-          <Text style={{textAlign: 'center'}}>즐겨찾기한 장소가 없습니다.</Text>
+          <Text style={{textAlign: 'center', color: colors[theme].BLACK}}>
+            즐겨찾기한 장소가 없습니다.
+          </Text>
         </View>
       }
       contentContainerStyle={styles.contentContainer}

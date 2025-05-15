@@ -3,6 +3,7 @@ import {FlatList, StyleSheet, Text, View} from 'react-native';
 import FeedItem from './FeedItem';
 import useGetInfiniteFavoritePosts from '@/hooks/queries/useGetInfiniteFavoritePosts';
 import useThemeStore from '@/store/useThemeStore';
+import {colors} from '@/constants';
 
 function FeedFavoriteList() {
   const {theme} = useThemeStore();
@@ -36,7 +37,15 @@ function FeedFavoriteList() {
       contentContainerStyle={styles.contentContainer}
       ListEmptyComponent={
         <View>
-          <Text>즐겨찾기 한 장소가 없습니다.</Text>
+          <Text
+            style={{
+              color: colors[theme].BLACK,
+              textAlign: 'center',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            즐겨찾기 한 장소가 없습니다.
+          </Text>
         </View>
       }
       onEndReached={handleEndReached}
