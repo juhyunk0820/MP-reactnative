@@ -31,10 +31,14 @@ end
 
 target 'MP_Front' do
   rn_maps_path = '../node_modules/react-native-maps'
-  pod 'react-native-maps', :path => rn_maps_path
-  # pod 'react-native-google-maps',:path => rn_maps_path   # <- 꼭 추가
-  pod 'GoogleMaps', '9.4.0'   # 최신 안정 버전
-  # pod 'Google-Maps-iOS-Utils', '9.4.0'
+
+  # ② Subs pec 이름을 podspec 과 동일하게
+  pod 'react-native-maps',
+      :path      => rn_maps_path,
+      :subspecs  => ['Maps', 'Google']
+
+  # pod 'GoogleMaps'                    # 버전 고정 없이 최신 사용
+  # pod 'Google-Maps-iOS-Utils'         # 필요하면 버전 고정
   config = use_native_modules!
 
   use_react_native!(
