@@ -13,6 +13,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {CompositeNavigationProp, useNavigation} from '@react-navigation/native';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {StackNavigationProp} from '@react-navigation/stack';
+import Toast from 'react-native-toast-message';
 
 import {MapStackParamList} from '@/navigations/stack/MapStackNavigator';
 import {MainDrawerParamList} from '@/navigations/drawer/MainDrawerNavigator';
@@ -22,17 +23,16 @@ import useUserLocation from '@/hooks/useUserLocation';
 import usePermission from '@/hooks/usePermission';
 import CustomMarker from '@/components/common/CustomMarker';
 import MarkerModal from '@/components/map/MarkerModal';
-import mapStyle from '@/style/mapStyle';
 import {alerts, colors, mapNavigations, numbers} from '@/constants';
 import useMoveMapView from '@/hooks/useMoveMapView';
-import Toast from 'react-native-toast-message';
 import useLocationStore from '@/store/useLocationStore';
+import getMapStyle from '@/style/mapStyle';
 import useThemeStore from '@/store/useThemeStore';
 import {ThemeMode} from '@/types';
-import useLegendStorage from '@/hooks/useLegendStorage';
 import MapLegend from '@/components/map/MapLegend';
+import useLegendStorage from '@/hooks/useLegendStorage';
+import useMarkerFilterStorage from '@/hooks/useMarkerFilterStorage';
 import MarkerFilterOption from '@/components/map/MarkerFilterOption';
-import useMarkerFilter from '@/hooks/useMarkerFilterStorage';
 
 type Navigation = CompositeNavigationProp<
   StackNavigationProp<MapStackParamList>,
@@ -49,23 +49,18 @@ function MapHomeScreen() {
   const [markerId, setMarkerId] = useState<number | null>(null);
   const markerModal = useModal();
   const filterOption = useModal();
-  const markerFilter = useMarkerFilter();
+  const markerFilter = useMarkerFilterStorage();
   const {data: markers = []} = useGetMarkers({
     select: markerFilter.transformFilterMarker,
   });
   const {mapRef, moveMapView, handleChangeDelta} = useMoveMapView();
   const legend = useLegendStorage();
-
   usePermission('LOCATION');
 
   const handlePressMarker = (id: number, coordinate: LatLng) => {
     setMarkerId(id);
     markerModal.show();
     moveMapView(coordinate);
-  };
-
-  const handlePressFilterOption = () => {
-    filterOption.show();
   };
 
   const handleLongPressMapView = ({nativeEvent}: LongPressEvent) => {
@@ -88,10 +83,9 @@ function MapHomeScreen() {
 
   const handlePressUserLocation = () => {
     if (isUserLocationError) {
-      // 에러메세지를 표시하기
       Toast.show({
         type: 'error',
-        text1: '위치 권한을 허용해 주세요.',
+        text1: '위치 권한을 허용해주세요.',
         position: 'bottom',
       });
       return;
@@ -108,12 +102,13 @@ function MapHomeScreen() {
     <>
       <MapView
         ref={mapRef}
+        key={theme}
         style={styles.container}
-        // provider={PROVIDER_GOOGLE}
+        provider={PROVIDER_GOOGLE}
         showsUserLocation
         followsUserLocation
         showsMyLocationButton={false}
-        customMapStyle={mapStyle(theme)}
+        customMapStyle={getMapStyle(theme)}
         onLongPress={handleLongPressMapView}
         onRegionChangeComplete={handleChangeDelta}
         region={{
@@ -148,9 +143,9 @@ function MapHomeScreen() {
         <Pressable style={styles.mapButton} onPress={handlePressSearch}>
           <Ionicons name="search" color={colors[theme].WHITE} size={25} />
         </Pressable>
-        <Pressable style={styles.mapButton} onPress={handlePressFilterOption}>
+        <Pressable style={styles.mapButton} onPress={filterOption.show}>
           <Ionicons
-            name="options-outline"
+            name={'options-outline'}
             color={colors[theme].WHITE}
             size={25}
           />
@@ -209,7 +204,7 @@ const styling = (theme: ThemeMode) =>
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: 30,
-      shadowColor: colors[theme].BLACK,
+      shadowColor: colors[theme].UNCHANGE_BLACK,
       shadowOffset: {width: 1, height: 2},
       shadowOpacity: 0.5,
       elevation: 2,
