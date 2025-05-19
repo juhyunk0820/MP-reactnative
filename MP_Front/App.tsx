@@ -8,10 +8,9 @@ import Toast, {
 } from 'react-native-toast-message';
 import RootNavigator from './src/navigations/root/RootNavigator';
 import queryClient from './src/api/queryClient';
-import {Alert, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import {colors} from '@/constants';
 import useThemeStorage from '@/hooks/useThemeStorage';
-import Config from 'react-native-config';
 
 const toastConfig = {
   success: (props: BaseToastProps) => (
