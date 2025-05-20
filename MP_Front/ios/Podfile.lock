@@ -1391,7 +1391,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-maps/Generated (1.23.7):
+  - react-native-maps/Generated (1.23.8):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1415,7 +1415,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-maps/Google (1.23.7):
+  - react-native-maps/Google (1.23.8):
     - DoubleConversion
     - glog
     - Google-Maps-iOS-Utils (= 6.1.0)
@@ -1443,7 +1443,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-maps/Maps (1.23.7):
+  - react-native-maps/Maps (1.23.8):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2547,7 +2547,7 @@ SPEC CHECKSUMS:
   react-native-date-picker: d0f7b5c8c7c85932dec43c4e4725abc45b309ef1
   react-native-encrypted-storage: 569d114e329b1c2c2d9f8c84bcdbe4478dda2258
   react-native-geolocation: d43962eb0be1b0056ba5c1f95e94fb7907494268
-  react-native-maps: 0f79e1087be08cb0edfe8b899f8eecb68dde51b6
+  react-native-maps: c97d5144f32174474fe56de27f62c1ff67f40acd
   react-native-safe-area-context: 562163222d999b79a51577eda2ea8ad2c32b4d06
   react-native-slider: 78ccabe016aef7418b1a846b31115b4165c4dde6
   react-native-splash-screen: 95994222cc95c236bd3cdc59fe45ed5f27969594
