@@ -14,9 +14,9 @@ function useGetAddress(location: LatLng) {
       try {
         console.log('useGetAddress');
         const {data} = await axios.get(
-          // `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&result_type=street_address|route|political&key=${Config.GOOGLE_API_KEY}&language=ko`,
+          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&result_type=street_address|route|political&key=${Config.GOOGLE_API_KEY}&language=ko`,
           // `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&location_type=ROOFTOP&result_type=street_address&key=${Config.GOOGLE_API_KEY}&language=ko`,
-          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&result_type=street_address&key=${Config.GOOGLE_API_KEY}&language=ko`,
+          // `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&result_type=street_address&key=${Config.GOOGLE_API_KEY}&language=ko`,
         ); // https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&location_type=ROOFTOP&result_type=street_address|route|political&key=${Config.GOOGLE_API_KEY}&language=ko
         const address = data.results.length
           ? data.results[0].formatted_address
