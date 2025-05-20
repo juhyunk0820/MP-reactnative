@@ -34,6 +34,7 @@ function DatePickerOption({
           <View style={styles.pickerContainer}>
             <DatePicker
               mode="date"
+              theme={theme === 'dark' ? 'dark' : 'light'}
               date={date}
               onDateChange={onChangeDate}
               locale="ko"
